@@ -17,13 +17,13 @@ namespace EBookStoreAPI.Controllers
     {
 
         private readonly IBookBO _bookBO;
-
+                    
         public BookDetailsController(IBookBO bookBO)
         {
             _bookBO = bookBO;
         }
 
-        [AllowAnonymous]
+       // [AllowAnonymous]
         [HttpGet]      
         [Route("GetBookDetails")]
         //[Authorize]
@@ -52,11 +52,17 @@ namespace EBookStoreAPI.Controllers
                 });
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
 
+        }
+
+
+        public string ReturnResult()
+        {
+            return "Success";
         }
 
 

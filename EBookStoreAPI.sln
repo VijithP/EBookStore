@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBookStoreDAL", "EBookStore
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBookStoreContracts", "EBookStoreContracts\EBookStoreContracts.csproj", "{819ABB96-2DE8-4CB5-A7AE-C5AFAAC7D251}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBookStoreAPI.Tests", "EBookStoreAPI.Tests\EBookStoreAPI.Tests.csproj", "{F7845B62-1AD6-46BD-A98A-3AB66A7824A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EBookStoreDALTest", "EBookStoreDALTest\EBookStoreDALTest.csproj", "{14792070-6D0A-48E9-AAD7-FD153710AC69}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{819ABB96-2DE8-4CB5-A7AE-C5AFAAC7D251}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{819ABB96-2DE8-4CB5-A7AE-C5AFAAC7D251}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{819ABB96-2DE8-4CB5-A7AE-C5AFAAC7D251}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7845B62-1AD6-46BD-A98A-3AB66A7824A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7845B62-1AD6-46BD-A98A-3AB66A7824A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7845B62-1AD6-46BD-A98A-3AB66A7824A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7845B62-1AD6-46BD-A98A-3AB66A7824A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14792070-6D0A-48E9-AAD7-FD153710AC69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14792070-6D0A-48E9-AAD7-FD153710AC69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14792070-6D0A-48E9-AAD7-FD153710AC69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14792070-6D0A-48E9-AAD7-FD153710AC69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

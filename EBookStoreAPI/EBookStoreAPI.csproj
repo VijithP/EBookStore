@@ -45,13 +45,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EBookStoreBO">
+    <Reference Include="EBookStoreBO, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\EBookStoreBO\bin\Debug\EBookStoreBO.dll</HintPath>
     </Reference>
     <Reference Include="EBookStoreContracts">
       <HintPath>..\EBookStoreContracts\bin\Debug\EBookStoreContracts.dll</HintPath>
     </Reference>
-    <Reference Include="EBookStoreDAL">
+    <Reference Include="EBookStoreDAL, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\EBookStoreDAL\bin\Debug\EBookStoreDAL.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">

@@ -7,18 +7,22 @@ using System.Data;
 using System.Data.SqlClient;
 using EBookStoreContracts.Contracts;
 using Dapper;
+using EBookStoreDAL.Interface;
 
 namespace EBookStoreDAL.DAL
 {
-    public class BookDAL:BaseRepository
+    public class BookDAL:IBookDAL
     {
         public List<Book> GetBookDetails()
         {
             try
             {
-                List<Book> bookList = new List<Book>();
-                using (SqlConnection con = GetEBookConnectionObject())
-                {                   
+
+                //SqlConnection sqlConnection = new SqlConnection(@"Server = (localdb)\MSSQLLocalDB; initial catalog = EBookStoreDB; integrated security = True; ");
+                List <Book> bookList = new List<Book>();
+                //using (SqlConnection con = sqlConnection)
+                using (SqlConnection con = BaseRepository.GetEBookConnectionObject())
+                {                                     
                     var data = con.Query<Book>("Usp_EBook_GetBookDetails", null, commandType: CommandType.StoredProcedure);
                     bookList = data.ToList();
                     return bookList;
@@ -35,7 +39,7 @@ namespace EBookStoreDAL.DAL
             try
             {
                 List<BookPurchase> bookList = new List<BookPurchase>();
-                using (SqlConnection con = GetEBookConnectionObject())
+                using (SqlConnection con = BaseRepository.GetEBookConnectionObject())
                 {
                     DynamicParameters dynamicParameters = new DynamicParameters();
                     dynamicParameters.Add("@UserID", Convert.ToInt32(bookPurchase.UserID));
@@ -56,9 +60,10 @@ namespace EBookStoreDAL.DAL
 
         public String SaveBookDetails(DataTable emp_AppraisalTable)
         {
+            string result=string.Empty;
             try
             {
-                using (SqlConnection con = GetEBookConnectionObject())
+                using (SqlConnection con = BaseRepository.GetEBookConnectionObject())
                 {
 
                     con.Open();
@@ -68,14 +73,16 @@ namespace EBookStoreDAL.DAL
                     sqlParam = cmd.Parameters.AddWithValue("@BookPurchase_Dt", emp_AppraisalTable);
                     cmd.ExecuteNonQuery();
                     con.Close();
-                    return "Success";
+                    result= "Success";
 
                 }
             }
             catch (Exception ex)
             {
+                result = ex.Message.ToString();
                 throw;
             }
+            return result;
         }
 
 

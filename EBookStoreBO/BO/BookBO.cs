@@ -7,14 +7,19 @@ using System.Data;
 using EBookStoreContracts.Contracts;
 using EBookStoreBO.Interface;
 using EBookStoreDAL.DAL;
+using EBookStoreDAL.Interface;
 
 
 namespace EBookStoreBO.BO
 {
     public class BookBO:IBookBO
     {
-
-        BookDAL _bookDAL = new BookDAL();
+        private IBookDAL _bookDAL;
+        public BookBO(IBookDAL bookDAL)
+        {
+            _bookDAL = bookDAL;
+        }
+             
         public List<Book> GetBookDetails()
         {
             return _bookDAL.GetBookDetails();

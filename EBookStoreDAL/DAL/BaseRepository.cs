@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace EBookStoreDAL.DAL
 {
@@ -20,7 +21,17 @@ namespace EBookStoreDAL.DAL
 
         public static string GetConnectionString()
         {
-            return System.Configuration.ConfigurationManager.ConnectionStrings["EBookConnection"].ConnectionString;
+            string connectionString = string.Empty;
+            try
+            {
+                connectionString= System.Configuration.ConfigurationManager.ConnectionStrings["EBookConnection"].ConnectionString;
+
+            }
+            catch (Exception)
+            {               
+                connectionString = @"Server=(localdb)\MSSQLLocalDB;initial catalog=EBookStoreDB;integrated security=True;"; //System.Configuration.ConfigurationManager.AppSettings.Get("EBookConnectionTesting");
+            }
+            return connectionString;
         }
 
     }

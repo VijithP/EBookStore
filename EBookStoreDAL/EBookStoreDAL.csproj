@@ -34,8 +34,7 @@
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.2.0.30\lib\net461\Dapper.dll</HintPath>
     </Reference>
-    <Reference Include="EBookStoreContracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="EBookStoreContracts">
       <HintPath>..\EBookStoreContracts\bin\Debug\EBookStoreContracts.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -52,10 +51,14 @@
     <Compile Include="DAL\BaseRepository.cs" />
     <Compile Include="DAL\BookDAL.cs" />
     <Compile Include="DAL\UserDAL.cs" />
+    <Compile Include="Interface\IBookDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
